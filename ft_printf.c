@@ -6,12 +6,12 @@
 /*   By: ymghazli <ymghazli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 12:37:52 by ymghazli          #+#    #+#             */
-/*   Updated: 2024/01/08 18:09:15 by ymghazli         ###   ########.fr       */
+/*   Updated: 2024/01/10 15:12:16 by ymghazli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft/libft.h"
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -127,10 +127,10 @@ int	ft_printf(const char *fmt, ...)
 
 //     // // Error handling
 //     printf("Error handling test:\n");
-//     printf("Invalid format specifier: %z\n");
-//     ft_printf("Invalid format specifier: %z\n");
-//     printf("Mismatched arguments: %d %d\n", 10);
-//     ft_printf("Mismatched arguments: %d %d\n", 10);
+//     // printf("Invalid format specifier: %z\n");
+//     // ft_printf("Invalid format specifier: %z\n");
+//     printf("Mismatched arguments: %d \n", 10);
+//     ft_printf("Mismatched arguments: %d \n", 10);
 //     // printf("\n");
 
 //     // // Variable argument handling

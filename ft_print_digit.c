@@ -6,11 +6,11 @@
 /*   By: ymghazli <ymghazli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:00:19 by ymghazli          #+#    #+#             */
-/*   Updated: 2024/01/04 14:01:41 by ymghazli         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:19:21 by ymghazli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <unistd.h>
 
 int	print_digit(unsigned long n, int base, int uppercase)

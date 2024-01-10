@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymghazli <ymghazli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 12:42:53 by yassine           #+#    #+#             */
-/*   Updated: 2023/12/10 18:10:43 by ymghazli         ###   ########.fr       */
+/*   Created: 2023/11/27 12:43:31 by yassine           #+#    #+#             */
+/*   Updated: 2024/01/09 18:19:15 by ymghazli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+#include <unistd.h>
 
-int	ft_isprint(int print)
+void	ft_putnbr(int n)
 {
-	if (print <= 31 || print > 126)
+	unsigned int	nbr;
+
+	if (n < 0)
 	{
-		return (0);
+		print_char('-');
+		nbr = (unsigned int)(-n);
 	}
-	return (1);
+	else
+		nbr = (unsigned int)(n);
+	if (nbr >= 10)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+	{
+		print_char(nbr + 48);
+	}
 }

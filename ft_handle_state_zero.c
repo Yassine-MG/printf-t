@@ -6,12 +6,12 @@
 /*   By: ymghazli <ymghazli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:00:07 by ymghazli          #+#    #+#             */
-/*   Updated: 2024/01/06 14:17:54 by ymghazli         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:19:32 by ymghazli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "libft/libft.h"
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <unistd.h>
 
 void	handle_state_zero(const char fmt_char, int *state, int *count)
