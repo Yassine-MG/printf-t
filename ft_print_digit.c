@@ -6,11 +6,12 @@
 /*   By: ymghazli <ymghazli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:00:19 by ymghazli          #+#    #+#             */
-/*   Updated: 2024/01/09 18:19:21 by ymghazli         ###   ########.fr       */
+/*   Updated: 2024/01/11 18:17:16 by ymghazli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 #include <unistd.h>
 
 int	print_digit(unsigned long n, int base, int uppercase)
@@ -30,6 +31,10 @@ int	print_digit(unsigned long n, int base, int uppercase)
 	if (n >= (unsigned)base)
 	{
 		count += print_digit(n / base, base, uppercase);
+	}
+	else if (!n)
+	{
+		count++;
 	}
 	print_char(symbols[n % base]);
 	return (count + 1);

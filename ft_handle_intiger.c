@@ -6,7 +6,7 @@
 /*   By: ymghazli <ymghazli@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:00:00 by ymghazli          #+#    #+#             */
-/*   Updated: 2024/01/09 18:19:42 by ymghazli         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:39:41 by ymghazli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-void	handle_integer(va_list args)
+void	handle_integer(va_list args, int *count)
 {
 	int	num;
 
 	num = va_arg(args, int);
-	ft_putnbr(num);
+	ft_putnbr(num, count);
 }
