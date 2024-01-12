@@ -13,15 +13,13 @@
 // #include "libft/libft.h"
 #include "ft_printf.h"
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
 
 void	handle_state_one(const char **fmt, int *state, va_list args, int *count)
 {
 	if (**fmt == 'c')
-	{
-		handle_character(args);
-		(*count)++;
-	}
+		handle_character(args, count);
 	else if (**fmt == '%')
 	{
 		print_char('%');
@@ -38,7 +36,9 @@ void	handle_state_one(const char **fmt, int *state, va_list args, int *count)
 	else if (**fmt == 'X')
 		handle_hexadecimal(args, 1, count);
 	else if (**fmt == 'u')
-		(*count) += print_digit(va_arg(args, unsigned int), 10, 0);
+	{
+		(*count) += print_digit(va_arg(args, unsigned int), 10, 0);// long
+	}
 	else
 		print_char(**fmt);
 	*state = 0;

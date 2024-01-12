@@ -20,10 +20,19 @@ int	print_char(int c)
 {
 	return (write(1, &c, 1));
 }
+// int	print_str(char *str)
+// {
+// 	size_t i = 0;
+// 	if (!str)
+// 		return (0);
+// 	while (str[i])
+// 		i++;
+// 	return (write(1, str, i));
+// }
 
 void	handle_hexadecimal(va_list args, int uppercase, int *count)
 {
-	(*count) += print_digit(va_arg(args, unsigned int), 16, uppercase);
+	(*count) += print_digit(va_arg(args, unsigned int), 16, uppercase); //long
 }
 
 void	handle_address(va_list args, int *count)
@@ -67,8 +76,8 @@ int	vprintk(const char *fmt, va_list args)
 		else if (state == 1)
 		{
 			handle_state_one(&fmt, &state, args, &count);
-			if (*fmt == '\n')
-				write(1, "\n", 1);
+			// if (*fmt == '\n')
+			// 	write(1, "\n", 1);
 		}
 		fmt++;
 	}
@@ -89,12 +98,25 @@ int	ft_printf(const char *fmt, ...)
 	return (count);
 }
 
+// int main(int argc, char**argv )
+// {
+// 	if (argc != 2)
+// 		return 1;
+// 	char *str = argv[1];
+// 	int i,j;
+// 	i = ft_printf(str,"asffsaasf");
+// 	printf("\n");
+// 	j = printf(str,"asffsaasf");
+// 	printf("\n my %d\n theirs %d\n",i,j);
+// }
+
+
 // int main()
 // {
-// 	char *str = "fdsfdgser%u %x %X %i %d %c %s %";
+// 	char *str = "%s\n%s";
 // 	int i,j;
-// 	i = ft_printf(str,12,13,13,11,11,'c', "NULL");
+// 	i = ft_printf(str,"hi", "bye");
 // 	printf("\n");
-// 	j = printf(str,12,13,13,11,11,'c', "NULL");
+// 	j = printf(str,"hi", "bye");
 // 	printf("\n %d\n %d\n",i,j);
 // }

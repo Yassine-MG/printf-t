@@ -16,8 +16,8 @@
 # include <stdarg.h>
 
 void	handle_address(va_list args, int *count);
-void	handle_character(va_list args);
-void	handle_string(va_list args, int *count);
+void	handle_character(va_list args, int *count);
+int		handle_string(va_list args, int *count);
 void	handle_state_zero(char fmt_char, int *state, int *count);
 void	handle_hexadecimal(va_list args, int uppercase, int *count);
 void	handle_integer(va_list args, int *count);

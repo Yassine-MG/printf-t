@@ -32,10 +32,10 @@ int	print_digit(unsigned long n, int base, int uppercase)
 	{
 		count += print_digit(n / base, base, uppercase);
 	}
-	else if (!n)
-	{
-		count++;
-	}
 	print_char(symbols[n % base]);
+	if (!n)
+	{
+		return ++count;
+	}
 	return (count + 1);
 }

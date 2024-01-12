@@ -15,10 +15,11 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-void	handle_character(va_list args)
+void	handle_character(va_list args, int *count)
 {
 	char	ch;
 
 	ch = va_arg(args, int);
 	print_char(ch);
+	(*count)++;
 }

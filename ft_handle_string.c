@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-void	handle_string(va_list args, int *count)
+int	handle_string(va_list args, int *count)
 {
 	const char	*s;
 	int			i;
@@ -25,15 +25,16 @@ void	handle_string(va_list args, int *count)
 	if (s == NULL)
 	{
 		s = "(null)";
-		while (s[i] != '\0')
-		{
-			(*count)++;
-			i++;
-		}
+		// while (s[i] != '\0')
+		// {
+		// 	(*count)++;
+		// 	i++;
+		// }
 	}
 	while (*s)
 	{
 		print_char(*s++);
 		(*count)++;
 	}
+	return (*count);
 }
